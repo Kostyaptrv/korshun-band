@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>О группе — Коршун</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo-link"><img src="logo.svg" alt="Коршун"></a>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="music.html">Музыка</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+    </ul>
+    <button id="theme-toggle" style="background:none;border:1px solid #00a8e8;color:#00a8e8;padding:0.5rem 1rem;cursor:pointer;">👁️</button>
+  </nav>
+
+  <section class="section center" data-aos="fade-up">
+    <div class="container">
+      <h1>О группе</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Мы — мост между кодом и душой.</p>
+
+      <div class="card" data-aos="fade-left" data-aos-delay="400">
+        <h3>Что такое «Коршун»?</h3>
+        <p>Проект, где музыка создаётся ИИ, но решение — за человеком.</p>
+      </div>
+
+      <div class="card" data-aos="fade-right" data-aos-delay="600">
+        <h3>Философия</h3>
+        <p>Цель — не боль, а сила, рождающаяся в борьбе.</p>
+      </div>
+
+      <a href="index.html" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="800">На главную</a>
+    </div>
+  </section>
+
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#0a0a0a" d="M0,192L48,197.3C96,203,192,213,288,208C384,203,480,181,576,181.3C672,181,768,203,864,208C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Коршун. Все права принадлежат команде.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+    // Переключение темы
+    const themeToggle = document.getElementById('theme-toggle');
+    let isDark = true;
+    themeToggle.addEventListener('click', () => {
+      isDark = !isDark;
+      document.body.style.background = isDark ? '#0a0a0a' : '#f0f0f0';
+      document.body.style.color = isDark ? '#f1faee' : '#111';
+      document.querySelector('.waves path').setAttribute('fill', isDark ? '#0a0a0a' : '#f0f0f0');
+      themeToggle.textContent = isDark ? '👁️' : '🌙';
+    });
+  </script>
+</body>
+</html>

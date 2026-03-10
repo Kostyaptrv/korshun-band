@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Музыка — Коршун</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключаем AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo-link"><img src="logo.svg" alt="Коршун"></a>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="about.html">О группе</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+    </ul>
+    <button id="theme-toggle" style="background:none;border:1px solid #00a8e8;color:#00a8e8;padding:0.5rem 1rem;cursor:pointer;">👁️</button>
+  </nav>
+
+  <section class="section center" data-aos="fade-up">
+    <div class="container">
+      <h1>Дискография</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Все треки — с участием ИИ. Решение — за человеком.</p>
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="400">
+        <h3>«Проклятый Город» — Альбом v1.0</h3>
+        <p><em>01.05.2025 | хэви-метал</em></p>
+        <audio controls style="width:100%; margin:1rem 0;">
+          <source src="assets/audio/korshun-album-preview.mp3" type="audio/mpeg">
+          Ваш браузер не поддерживает аудио.
+        </audio>
+        <p><strong>Текст:</strong> «Я — тень над городом...»</p>
+        <small>Создано: GAN + Transformer. Контроль: человек.</small>
+      </div>
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="600">
+        <h3>«Вестник» — Сингл v1.1</h3>
+        <p><em>15.04.2025 | 4:21</em></p>
+        <audio controls style="width:100%; margin:1rem 0;">
+          <source src="assets/audio/vestnik-synth.mp3" type="audio/mpeg">
+          Ваш браузер не поддерживает аудио.
+        </audio>
+        <p>Первый клип набрал 800K просмотров за 72 часа.</p>
+      </div>
+
+      <a href="index.html" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="800">На главную</a>
+    </div>
+  </section>
+
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#0a0a0a" d="M0,192L48,197.3C96,203,192,213,288,208C384,203,480,181,576,181.3C672,181,768,203,864,208C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Коршун. Все права защищены.</p>
+    <p><a href="discography.html">Дискография</a> | <a href="https://t.me/korshun_band" target="_blank">Telegram</a></p>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Инициализация AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Переключение темы
+    const themeToggle = document.getElementById('theme-toggle');
+    let isDark = true;
+
+    themeToggle.addEventListener('click', () => {
+      if (isDark) {
+        document.body.style.background = '#f0f0f0';
+        document.body.style.color = '#111';
+        document.querySelector('.waves path').setAttribute('fill', '#f0f0f0');
+        themeToggle.textContent = '🌙';
+      } else {
+        document.body.style.background = '#0a0a0a';
+        document.body.style.color = '#f1faee';
+        document.querySelector('.waves path').setAttribute('fill', '#0a0a0a');
+        themeToggle.textContent = '👁️';
+      }
+      isDark = !isDark;
+    });
+  </script>
+</body>
+</html>
