@@ -69,6 +69,58 @@
     .btn-secondary:hover {
       background: rgba(0, 168, 232, 0.1);
     }
+
+    /* Стили для календаря релизов */
+    .releases-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .release-card {
+      max-width: 300px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .release-cover {
+      width: 100%;
+      height: 180px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .release-card:hover .release-cover {
+      transform: scale(1.05);
+    }
+
+    .countdown {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      color: #00a8e8;
+    }
+
+    .listen-link {
+      display: block;
+      margin-top: 0.5rem;
+      color: #00a8e8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .listen-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -82,6 +134,7 @@
     <ul>
       <li><a href="#music">Музыка</a></li>
       <li><a href="#voices">Голоса</a></li>
+      <li><a href="#releases">Релизы</a></li>
       <li><a href="about.html">О группе</a></li>
       <li><a href="contact.html">Контакты</a></li>
     </ul>
@@ -147,6 +200,42 @@
           <audio controls style="width:100%;margin:1rem 0;">
             <source src="assets/audio/scream-korshun.mp3" type="audio/mpeg">
           </audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Релизы -->
+  <section id="releases" class="section" data-aos="fade-up">
+    <div class="container">
+      <h2>Грядущие релизы</h2>
+      <p style="color:#7a90a7;margin-bottom:2rem;">Следующий удар — ближе, чем ты думаешь.</p>
+
+      <div class="releases-grid">
+        <!-- Релиз 1 -->
+        <div class="card release-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="release-cover">
+            <span style="color:#555;font-size:1.2rem;">Обложка</span>
+          </div>
+          <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">«Пробуждение»</h3>
+          <p style="color:#7a90a7;font-size:0.9rem;"><strong>Дата:</strong> 15.06.2025</p>
+          <p style="color:#0f0;font-size:0.9rem;">● В ожидании</p>
+          <div class="countdown" style="color:#00a8e8;" data-countdown="2025-06-15">
+            Осталось: <span>...</span>
+          </div>
+        </div>
+
+        <!-- Релиз 2 -->
+        <div class="card release-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="release-cover">
+            <span style="color:#555;font-size:1.2rem;">Demo</span>
+          </div>
+          <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">«Тень над городом»</h3>
+          <p style="color:#7a90a7;font-size:0.9rem;"><strong>Дата:</strong> 01.08.2025</p>
+          <p style="color:#ff6b00;font-size:0.9rem;">● В разработке</p>
+          <div class="countdown" style="color:#7a90a7;" data-countdown="2025-08-01">
+            Осталось: <span>...</span>
+          </div>
         </div>
       </div>
     </div>
@@ -252,8 +341,39 @@
         }
         isDark = !isDark;
       });
+
+      // === ОБРАТНЫЙ ОТСЧЁТ ДО РЕЛИЗОВ ===
+      function updateCountdowns() {
+        document.querySelectorAll('.countdown').forEach(el => {
+          const dateStr = el.getAttribute('data-countdown');
+          const releaseDate = new Date(dateStr + 'T00:00:00');
+          const now = new Date();
+          const diff = releaseDate - now;
+
+          if (diff <= 0) {
+            el.innerHTML = '<span style="color:#0f0">🟢 ВЫШЕЛ</span>';
+            // Добавляем ссылку "Слушать", если её ещё нет
+            const card = el.closest('.release-card');
+            if (!card.querySelector('.listen-link')) {
+              const link = document.createElement('a');
+              link.href = 'music.html';
+              link.textContent = '→ Слушать';
+              link.className = 'listen-link';
+              card.appendChild(link);
+            }
+          } else {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            el.querySelector('span').textContent = `${days} дн. ${hours} ч.`;
+          }
+        });
+      }
+
+      // Запускаем обновление при загрузке
+      updateCountdowns();
+      // Обновляем каждые 10 минут
+      setInterval(updateCountdowns, 600000);
     });
   </script>
 </body>
-
 </html>
