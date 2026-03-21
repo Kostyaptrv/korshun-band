@@ -5,43 +5,23 @@
   <title>Коршун | Хэви-метал</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Коршун — хэви-метал от ИИ. Контроль — за человеком. Цель — пробудить.">
+  <meta name="keywords" content="Коршун, heavy metal, ИИ, музыка, русский метал">
+  <meta property="og:title" content="Коршун | Музыка от ИИ">
+  <meta property="og:description" content="Хэви-метал нового поколения. Создано нейросетью. Контроль — за человеком.">
+  <meta property="og:image" content="img/cover-preview.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* Частицы — фон */
-    #tsparticles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
     /* Остальные стили — как раньше */
-    .hero {
-      text-align: center;
-      padding: 5rem 0;
-    }
-
-    .tagline {
-      color: #c7d0d9;
-      font-size: 1.3rem;
-      margin: 1.5rem 0;
-      opacity: 0.9;
-    }
-
-    .status {
-      color: #0f0;
-      font-weight: bold;
-      margin: 1rem 0;
-    }
-
-    .cta-buttons {
-      margin: 2rem 0;
-    }
-
+    .hero { text-align: center; padding: 5rem 0; }
+    .tagline { color: #c7d0d9; font-size: 1.3rem; margin: 1.5rem 0; opacity: 0.9; }
+    .status { color: #0f0; font-weight: bold; margin: 1rem 0; }
+    .cta-buttons { margin: 2rem 0; }
     .btn-primary {
       display: inline-block;
       padding: 14px 36px;
@@ -54,39 +34,13 @@
       text-decoration: none;
       transition: all 0.3s ease;
     }
-
-    .btn-primary:hover {
-      background: #ff6b00;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #00a8e8;
-      border: 2px solid #00a8e8;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0, 168, 232, 0.1);
-    }
+    .btn-primary:hover { background: #ff6b00; transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: #00a8e8; border: 2px solid #00a8e8; }
+    .btn-secondary:hover { background: rgba(0, 168, 232, 0.1); }
 
     /* Стили для календаря релизов */
-    .releases-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-
-    .release-card {
-      max-width: 300px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
+    .releases-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem; }
+    .release-card { max-width: 300px; text-align: center; position: relative; overflow: hidden; border-radius: 12px; }
     .release-cover {
       width: 100%;
       height: 180px;
@@ -99,34 +53,13 @@
       overflow: hidden;
       transition: transform 0.3s ease;
     }
-
-    .release-card:hover .release-cover {
-      transform: scale(1.05);
-    }
-
-    .countdown {
-      margin: 1rem 0;
-      font-size: 0.9rem;
-      color: #00a8e8;
-    }
-
-    .listen-link {
-      display: block;
-      margin-top: 0.5rem;
-      color: #00a8e8;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .listen-link:hover {
-      text-decoration: underline;
-    }
+    .release-card:hover .release-cover { transform: scale(1.05); }
+    .countdown { margin: 1rem 0; font-size: 0.9rem; color: #00a8e8; }
+    .listen-link { display: block; margin-top: 0.5rem; color: #00a8e8; font-weight: bold; text-decoration: none; }
+    .listen-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-
-  <!-- Фон из частиц -->
-  <div id="tsparticles"></div>
 
   <!-- Навигация -->
   <nav>
@@ -155,10 +88,23 @@
       <p class="tagline">Музыка от ИИ. Контроль — за человеком. Цель — пробудить.</p>
       <p class="status">Группа активна: ●</p>
       <p style="color:#7a90a7;font-size:0.9rem;">Последний релиз: 21.01.2026</p>
-
       <div class="cta-buttons">
         <a href="music.html" class="btn btn-primary">Слушать альбом</a>
         <a href="#voices" class="btn btn-primary btn-secondary">Услышать голоса</a>
+      </div>
+
+      <!-- ЭКВАЛАЙЗЕР -->
+      <div class="equalizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
     </div>
   </section>
@@ -169,12 +115,7 @@
       <h2>«Под светом луны» — Альбом</h2>
       <div class="card">
         <div style="margin:2rem auto;max-width:700px;">
-          <iframe
-            style="border:none;width:100%;height:556px;border-radius:8px;"
-            src="https://music.yandex.ru/iframe/album/40121409"
-            frameborder="0"
-            allow="clipboard-write">
-          </iframe>
+          <iframe style="border:none;width:100%;height:556px;border-radius:8px;" src="https://music.yandex.ru/iframe/album/40121409" frameborder="0" allow="clipboard-write"></iframe>
         </div>
         <p><strong>Текст:</strong> «Я — не тень. Я — голос, что будит...»</p>
         <small>Создано: GAN + Transformer. Контроль: человек.</small>
@@ -210,32 +151,20 @@
     <div class="container">
       <h2>Грядущие релизы</h2>
       <p style="color:#7a90a7;margin-bottom:2rem;">Следующий удар — ближе, чем ты думаешь.</p>
-
       <div class="releases-grid">
-        <!-- Релиз 1 -->
         <div class="card release-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="release-cover">
-            <span style="color:#555;font-size:1.2rem;">Обложка</span>
-          </div>
+          <div class="release-cover"><span style="color:#555;font-size:1.2rem;">Обложка</span></div>
           <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">«Пробуждение»</h3>
           <p style="color:#7a90a7;font-size:0.9rem;"><strong>Дата:</strong> 15.06.2026</p>
           <p style="color:#0f0;font-size:0.9rem;">● В ожидании</p>
-          <div class="countdown" style="color:#00a8e8;" data-countdown="2026-06-15">
-            Осталось: <span>...</span>
-          </div>
+          <div class="countdown" style="color:#00a8e8;" data-countdown="2026-06-15">Осталось: <span>...</span></div>
         </div>
-
-        <!-- Релиз 2 -->
         <div class="card release-card" data-aos="zoom-in" data-aos-delay="400">
-          <div class="release-cover">
-            <span style="color:#555;font-size:1.2rem;">Demo</span>
-          </div>
+          <div class="release-cover"><span style="color:#555;font-size:1.2rem;">Demo</span></div>
           <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">«Тень над городом»</h3>
           <p style="color:#7a90a7;font-size:0.9rem;"><strong>Дата:</strong> 01.08.2026</p>
           <p style="color:#ff6b00;font-size:0.9rem;">● В разработке</p>
-          <div class="countdown" style="color:#7a90a7;" data-countdown="2026-08-01">
-            Осталось: <span>...</span>
-          </div>
+          <div class="countdown" style="color:#7a90a7;" data-countdown="2026-08-01">Осталось: <span>...</span></div>
         </div>
       </div>
     </div>
@@ -255,126 +184,6 @@
   <!-- Скрипты -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <!-- tsparticles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-  <script>
-    // Инициализация частиц
-    document.addEventListener("DOMContentLoaded", () => {
-      tsParticles.load("tsparticles", {
-        particles: {
-          number: { value: 60 },
-          color: { value: "#00a8e8" },
-          opacity: { value: 0.4 },
-          size: { value: 2 },
-          move: {
-            enable: true,
-            speed: 1.5,
-            direction: "none",
-            random: false,
-            straight: false,
-            attract: { enable: false, rotateX: 600, rotateY: 1200 }
-          },
-          links: {
-            enable: true,
-            distance: 150,
-            color: "#00a8e8",
-            opacity: 0.2,
-            width: 1
-          }
-        },
-        interactivity: {
-          events: {
-            onhover: { enable: true, mode: "repulse" },
-            onclick: { enable: true, mode: "push" }
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 },
-            push: { particles_nb: 4 }
-          }
-        },
-        background: { color: "#0a0a0a" },
-        fullScreen: { enable: false }
-      });
-
-      // Анимация букв
-      const letters = gsap.utils.toArray(".letter");
-      gsap.set("#korshun-title", { visibility: "visible" });
-      letters.forEach((letter, i) => {
-        gsap.to(letter, {
-          opacity: 1,
-          y: 0,
-          rotationX: 0,
-          duration: 0.8,
-          ease: "back.out(1.2)",
-          delay: parseFloat(letter.style.getPropertyValue("--delay")) || 0
-        });
-      });
-
-      // Инициализация AOS
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-      });
-
-      // Переключение темы
-      const themeToggle = document.getElementById('theme-toggle');
-      let isDark = true;
-
-      themeToggle.addEventListener('click', () => {
-        if (isDark) {
-          // Светлая тема
-          document.body.style.background = '#f0f0f0';
-          document.body.style.color = '#111';
-          document.querySelector('.waves path').setAttribute('fill', '#f0f0f0');
-          themeToggle.textContent = '🌙';
-          // Обновляем фон частиц
-          tsParticles.setBackground({ color: '#f0f0f0' });
-        } else {
-          // Тёмная тема
-          document.body.style.background = '#0a0a0a';
-          document.body.style.color = '#f1faee';
-          document.querySelector('.waves path').setAttribute('fill', '#0a0a0a');
-          themeToggle.textContent = '👁️';
-          // Обновляем фон частиц
-          tsParticles.setBackground({ color: '#0a0a0a' });
-        }
-        isDark = !isDark;
-      });
-
-      // === ОБРАТНЫЙ ОТСЧЁТ ДО РЕЛИЗОВ ===
-      function updateCountdowns() {
-        document.querySelectorAll('.countdown').forEach(el => {
-          const dateStr = el.getAttribute('data-countdown');
-          const releaseDate = new Date(dateStr + 'T00:00:00');
-          const now = new Date();
-          const diff = releaseDate - now;
-
-          if (diff <= 0) {
-            el.innerHTML = '<span style="color:#0f0">🟢 ВЫШЕЛ</span>';
-            // Добавляем ссылку "Слушать", если её ещё нет
-            const card = el.closest('.release-card');
-            if (!card.querySelector('.listen-link')) {
-              const link = document.createElement('a');
-              link.href = 'music.html';
-              link.textContent = '→ Слушать';
-              link.className = 'listen-link';
-              card.appendChild(link);
-            }
-          } else {
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            el.querySelector('span').textContent = `${days} дн. ${hours} ч.`;
-          }
-        });
-      }
-
-      // Запускаем обновление при загрузке
-      updateCountdowns();
-      // Обновляем каждые 10 минут
-      setInterval(updateCountdowns, 600000);
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
-
